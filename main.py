@@ -9,8 +9,8 @@ import stripe
 import os
 
 stripe_keys = {
-  'secret_key': 'sk_test_51KNC34FNBNxpmKdvci0jGDT7KLMzkO0nt8ihmUYltHZZ1pDs6qWaR8XdDVvlobpCxXvYL7mwaPjvqyrNojaS4LKe00WXZZjtFM',
-  'publishable_key': 'pk_test_51KNC34FNBNxpmKdv9xNRrTuitoi8r6ZA2Yx0SNCUT9Smi5t2bFn4ZfCqTxcSd2VMzwf1typaxdjuvhbLX16jsKqM00N7zb5ZBR',
+  'secret_key': os.environ.get('secret_key'),
+  'publishable_key': os.environ.get('publishable_key'),
 }
 
 stripe.api_key = stripe_keys['secret_key']

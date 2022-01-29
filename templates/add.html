@@ -1,0 +1,24 @@
+{% include "header.html" %}
+  <body>
+
+  {% include "navbar.html" %}
+
+    <section class='bodi'>
+      <div class="container-fluid">
+        <form class="" action="{{url_for('add')}}" method="post">
+          <h2>Image URL</h2>
+          <input class="form-control w-100" name="url"  type="url" data-sb-validations="required">
+          <h2>Product Name</h2>
+          <input class="form-control w-100" name="name"  type="text" data-sb-validations="required">
+          <h2>Product Describe</h2>
+          <input class="form-control w-100" name="describe"  type="text" data-sb-validations="required">
+          <h2>Price</h2>
+          <input class="form-control w-100" name="price"  type="number" data-sb-validations="required">
+          <button class="add-btn btn btn-lg btn-block btn-primary text-uppercas" id="submitButton" type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+
+  {% include "footer.html" %}
+  </body>
+</html>

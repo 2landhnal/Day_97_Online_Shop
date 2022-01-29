@@ -1,0 +1,47 @@
+
+{% include "header.html" %}
+  <body>
+
+  {% include "navbar.html" %}
+
+      <section class='bodi'>
+
+        <!-- Cards -->
+        <div class="container-fluid">
+          <div class="row card-deck">
+
+          {% for prod in prods: %}
+            <div class="card box p-3 border-0">
+              <a href="show.html">
+                <img class="card-img-top pro_img" src={{prod.url}} alt="Card image cap">
+                  <h3 class="card-title">{{prod.name}}</h3>
+                  <h2 class='mt-auto price'>{{prod.price}}$</h2>
+                  <a href="#" class='mt-auto buy-btn w-100 btn btn-lg btn-block btn-primary'>Buy Now</a>
+                    <a href="{{url_for('delete', pro_id=prod.id)}}" class='mt-auto delete-btn w-100 btn btn-lg btn-block btn-danger'>Delete</a>
+              </a>
+            </div>
+          {% endfor %}
+
+          </div>
+        </div>
+
+        <div class="container-fluid">
+          <form action="/charge" method="post">
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="{{ key }}"
+            data-description="A Flask Charge"
+            data-amount={{total}}
+            data-locale="auto">
+          </script>
+          </form>
+        </div>
+
+        <div class="container-fluid">
+          <button class='btn-grad btn btn-lg btn-block text-uppercas' type="submit" name="button">Checkout</button>
+        </div>
+
+      </section>
+
+  {% include "footer.html" %}
+  </body>
+</html>

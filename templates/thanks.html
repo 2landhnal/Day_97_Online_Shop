@@ -1,0 +1,16 @@
+
+{% include "header.html" %}
+  <body>
+
+  {% include "navbar.html" %}
+
+    <section class='bodi thanks'>
+      <div class="container-fluid">
+        <h2>Thanks for paying {{total}}$! We'll always be here for you.</h2>
+        <a href="{{url_for('home')}}" class='btn-grad btn btn-lg btn-block btn-danger border-0'>Home</a>
+      </div>
+    </section>
+
+  {% include "footer.html" %}
+  </body>
+</html>

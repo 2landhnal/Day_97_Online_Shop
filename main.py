@@ -161,6 +161,38 @@ def delete(pro_id):
     db.session.commit()
     return redirect(url_for('cart'))
 
+@app.route("/deletesp/<int:pro_id>", methods=['POST', 'GET'])
+def deleteSp(pro_id):
+    users = User.query.all()
+    for user in users():
+        pros_in_cart = user.bproducts
+        for pro in pros_in_cart:
+            if pro.id == pro_id:
+                db.session.delete(pro)
+                db.session.commit()
+    pro_to_delete = SProducts.query.get(pro_id)
+    db.session.delete(pro_to_delete)
+    db.session.commit()
+    return redirect(url_for('your_pros'))
+
+@app.route('/your_pros')
+def your_pros():
+    prods = current_user.sproducts
+    return render_template('your_pros.html', prods=prods)
+
+@app.route('/edit/<int:pro_id>', methods=['POST', 'GET'])
+def edit(pro_id):
+    pro = SProducts.query.get(pro_id)
+    if request.method == 'POST':
+        form = request.form
+        pro.url = form['url'],
+        pro.name = form['name'],
+        pro.describe = form['describe'],
+        pro.price = form['price'],
+        db.session.commit()
+        return redirect(url_for('your_pros'))
+    return render_template('edit.html', pro=pro)
+
 @app.route('/charge', methods=['POST'])
 def charge():
     # Amount in cents

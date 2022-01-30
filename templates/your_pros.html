@@ -1,0 +1,35 @@
+{% include "header.html" %}
+  <body>
+
+  {% include "navbar.html" %}
+
+    <section class='bodi'>
+
+      <div class="container-fluid">
+        <h2 class="thanks">Your Products</h2>
+      </div>
+
+      <!-- Cards -->
+      <div class="container-fluid">
+        <div class="row card-deck">
+
+          {% for prod in prods: %}
+            <div class="card box p-3 border-0">
+              <a href={{url_for('show', pro_id=prod.id)}}>
+                <img class="card-img-top pro_img" src={{prod.url}} alt="Card image cap">
+                  <h3 class="card-title">{{prod.name}}</h3>
+                  <h2 class='mt-auto price'>{{prod.price}}$</h2>
+                  <a href="{{url_for('edit', pro_id=prod.id)}}" class='mt-auto buy-btn w-100 btn btn-lg btn-block btn-primary'>Edit</a>
+                  <a href="{{url_for('deleteSp', pro_id=prod.id)}}" class='mt-auto delete-btn w-100 btn btn-lg btn-block btn-danger'>Delete</a>
+              </a>
+            </div>
+          {% endfor %}
+
+        </div>
+      </div>
+
+    </section>
+
+  {% include "footer.html" %}
+  </body>
+</html>

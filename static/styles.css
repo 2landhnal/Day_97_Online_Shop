@@ -41,7 +41,7 @@ input {
   margin: 5% 0 20% 0;
 }
 .head-sec {
-  color: #12FFF7;
+  color: rgb(255, 66, 78);
 }
 .add-btn, .show_btn {
   background-color: rgb(255, 66, 78);

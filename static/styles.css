@@ -1,7 +1,9 @@
 body {
+  position: relative;
   background-color: rgba(209, 219, 230, 0.18);
   font-family: 'Ubuntu', sans-serif;
   padding-top: 15%;
+  padding-bottom: 15%;
 }
 .container-fluid {
   padding: 3% 10%;
@@ -108,6 +110,7 @@ text-decoration: none;
 }
 @media (min-width: 768px) and (max-width: 1216px) {
     .bodi {
+        padding-bottom: 25%;
         margin-top:10%;
     }
     .card {
@@ -119,6 +122,7 @@ text-decoration: none;
 
 @media (min-width: 0px) and (max-width: 1023px){
     .bodi {
+        padding-bottom: 35%;
         margin-top:20%;
     }
     .card {
@@ -129,6 +133,9 @@ text-decoration: none;
 }
 /* Footer */
 .footer {
+  width: 100%;
+  position:absolute;
+  bottom:0;
   color: white;
   text-align: center;
   margin-top: 1%;

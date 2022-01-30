@@ -40,6 +40,9 @@ input {
   color: #12FFF7;
   margin: 5% 0 20% 0;
 }
+.head-sec {
+  color: #12FFF7;
+}
 .add-btn, .buy-btn, .show_btn {
   background-color: #12FFF7;
   border: 0;

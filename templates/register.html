@@ -5,6 +5,15 @@
 
     <section class='bodi'>
       <div class="container-fluid">
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+              <li style="color:red">{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
         <form class="" action="{{url_for('register')}}" method="post">
           <h2>Email</h2>
           <input class="form-control w-100" name="email"  type="email" data-sb-validations="required">

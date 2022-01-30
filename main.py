@@ -163,13 +163,6 @@ def delete(pro_id):
 
 @app.route("/deletesp/<int:pro_id>", methods=['POST', 'GET'])
 def deleteSp(pro_id):
-    users = User.query.all()
-    for user in users:
-        pros_in_cart = user.bproducts
-        for pro in pros_in_cart:
-            if pro.id == pro_id:
-                db.session.delete(pro)
-                db.session.commit()
     pro_to_delete = SProducts.query.get(pro_id)
     db.session.delete(pro_to_delete)
     db.session.commit()

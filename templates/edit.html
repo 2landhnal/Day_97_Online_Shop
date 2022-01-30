@@ -5,7 +5,7 @@
 
     <section class='bodi'>
       <div class="container-fluid">
-        <form class="" action="{{url_for('edit')}}" method="post">
+        <form class="" action="{{url_for('edit', pro_id=pro.id)}}" method="post">
           <h2>Image URL</h2>
           <input class="form-control w-100" value="{{ pro.url }}" name="url"  type="url" data-sb-validations="required">
           <h2>Product Name</h2>

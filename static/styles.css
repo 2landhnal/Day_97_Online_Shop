@@ -43,15 +43,21 @@ input {
 .head-sec {
   color: #12FFF7;
 }
-.add-btn, .buy-btn, .show_btn {
-  background-color: #12FFF7;
+.add-btn, .show_btn {
+  background-color: rgb(255, 66, 78);
+  border: 0;
+}
+.add-btn:hover, .show_btn:hover {
+  background-color: #db1622;
   border: 0;
 }
 .buy-btn {
+  background-color: #12FFF7;
+  border: 0;
   margin-bottom: 2%;
 }
 .price {
-  color: #12FFF7;
+  color: rgb(255, 66, 78);
 }
 .pro_img, .show_img {
   border-radius: 10px;

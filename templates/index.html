@@ -3,7 +3,11 @@
 
   {% include "navbar.html" %}
 
-    <section class='bodi'>
+    <section class='shadow'>
+      <img src="{{ url_for('static', filename='poster.jpg') }}" class='poster' alt="">
+    </section>
+
+    <section class=''>
 
       <div class="container-fluid">
         {% if current_user.is_authenticated: %}

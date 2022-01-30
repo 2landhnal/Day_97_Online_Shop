@@ -1,9 +1,9 @@
 body {
+  min-height: 100vh;
   position: relative;
   background-color: rgba(209, 219, 230, 0.18);
   font-family: 'Ubuntu', sans-serif;
-  padding-top: 15%;
-  padding-bottom: 15%;
+  padding-bottom: 20%;
 }
 .container-fluid {
   padding: 3% 10%;
@@ -37,6 +37,12 @@ input {
   margin: 3% 0;
 }
 /* Body */
+.bodi {
+   margin-top: 15%;
+}
+.poster {
+    width: 100%;
+}
 .thanks {
   text-align: center;
   color: #12FFF7;
@@ -110,7 +116,7 @@ text-decoration: none;
 }
 @media (min-width: 768px) and (max-width: 1216px) {
     .bodi {
-        padding-bottom: 25%;
+        padding-bottom: 45%;
         margin-top:10%;
     }
     .card {
@@ -122,8 +128,8 @@ text-decoration: none;
 
 @media (min-width: 0px) and (max-width: 1023px){
     .bodi {
-        padding-bottom: 35%;
-        margin-top:20%;
+        padding-bottom: 45%;
+        margin-top:12%;
     }
     .card {
       border-radius: 15px;
@@ -138,7 +144,7 @@ text-decoration: none;
   bottom:0;
   color: white;
   text-align: center;
-  margin-top: 1%;
+  padding-top: 3%;
   background-color: black;
 }
 .fas {

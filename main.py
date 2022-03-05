@@ -207,9 +207,6 @@ def charge():
         currency='usd',
         description='Flask Charge'
     )
-
-
-
     return render_template('thanks.html', total=total)
 
 if __name__ == '__main__':

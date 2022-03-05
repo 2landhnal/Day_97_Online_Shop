@@ -28,7 +28,11 @@
                   <h3 class="card-title">{{prod.name}}</h3>
                   <h2 class='mt-auto price'>{{prod.price}}$</h2>
                   <a href="#" class='mt-auto buy-btn w-100 btn btn-lg btn-block btn-primary'>Buy Now</a>
+                  {% if current_user.is_authenticated: %}
                   <a href="{{url_for('addtocart', pro_id=prod.id)}}" class='mt-auto add-btn w-100 btn btn-lg btn-block btn-primary'>Add to Cart</a>
+                  {% else %}
+                  <a href="{{url_for('login')}}" class='mt-auto add-btn w-100 btn btn-lg btn-block btn-primary'>Add to Cart</a>
+                  {% endif %}
               </a>
             </div>
           {% endfor %}
